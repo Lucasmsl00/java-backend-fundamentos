@@ -41,8 +41,4 @@ public class Usuario {
 
     }
 
-    public static void main(String[] args) {
-        Usuario u = new Usuario(1, "Lucas", "lucas@gmail.com");
-        u.exibirDados();
-    }
 }
