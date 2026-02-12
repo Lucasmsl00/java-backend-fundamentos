@@ -15,12 +15,12 @@ public class Main {
 
 
 
-        System.out.println("Buscando usuário por ID 3...");
+        System.out.println("Buscando usuário por ID 1...");
 
-        Usuario usuarioEncontrado = usuarioService.buscaPorId(3);
+        boolean existe = usuarioService.existeUsuario(1);
 
-        if (usuarioEncontrado != null) {
-            usuarioEncontrado.exibirDados();
+        if (existe) {
+            System.out.println("O usuário existe no sistema.");
         } else {
             System.out.println("Usuário não encontrado.");
         }

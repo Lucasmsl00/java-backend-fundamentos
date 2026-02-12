@@ -38,4 +38,14 @@ public class UsuarioService {
 
         return null;
     }
+
+
+    public boolean existeUsuario(int id) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
