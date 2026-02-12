@@ -12,5 +12,17 @@ public class Main {
         usuarioService.adicionarUsuario(usuario2);
 
         usuarioService.listarUsuarios();
+
+
+
+        System.out.println("Buscando usuário por ID 3...");
+
+        Usuario usuarioEncontrado = usuarioService.buscaPorId(3);
+
+        if (usuarioEncontrado != null) {
+            usuarioEncontrado.exibirDados();
+        } else {
+            System.out.println("Usuário não encontrado.");
+        }
     }
 }

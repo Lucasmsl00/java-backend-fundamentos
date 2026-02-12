@@ -28,4 +28,14 @@ public class UsuarioService {
             System.out.println("\n------------------------");
         }
     }
+
+    public Usuario buscaPorId(int id) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId() == id) {
+                return usuario;
+            }
+        }
+
+        return null;
+    }
 }
