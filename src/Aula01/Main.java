@@ -27,7 +27,25 @@ public class Main {
         Usuario usuario3 = new Usuario(3, "Maria", "maria@gmail.com");
         usuarioService.adicionarUsuario(usuario3);
 
-        System.out.println("\nLista Atualizada:\n");
+        System.out.println("\nAtualizando nome e email do usuário ID 2...");
+
+        boolean emailAtualizado = usuarioService.atualizarEmail(2, "luanlima@gmail.com");
+
+        if (emailAtualizado) {
+            System.out.println("Email atualizado com sucesso.");
+        } else {
+            System.out.println("Usuário não encontrado para atualização do email.");
+        }
+
+        boolean nomeAtualizado = usuarioService.atualizarNome(2, "Luan Lima");
+
+        if (nomeAtualizado) {
+            System.out.println("Nome atualizado com sucesso");
+        } else {
+            System.out.println("Usuário não encontrado para atualização do nome");
+        }
+
+        System.out.println("\nLista após atualização:\n");
         usuarioService.listarUsuarios();
 
         System.out.printf("\nTotal de usuários: %s", usuarioService.totalUsuarios());

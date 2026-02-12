@@ -63,4 +63,26 @@ public class UsuarioService {
     public int totalUsuarios() {
         return usuarios.size();
     }
+
+    public boolean atualizarEmail(int id, String novoEmail) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId() == id) {
+                usuario.setEmail(novoEmail);
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public boolean atualizarNome(int id, String novoNome) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId() == id) {
+                usuario.setNome(novoNome);
+                return true;
+            }
+        }
+        return false;
+    }
 }
