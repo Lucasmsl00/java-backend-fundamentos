@@ -13,16 +13,23 @@ public class Main {
 
         usuarioService.listarUsuarios();
 
+        System.out.println("Removendo usuário com ID 1...");
 
+        boolean removido = usuarioService.removerUsuario(1);
 
-        System.out.println("Buscando usuário por ID 1...");
-
-        boolean existe = usuarioService.existeUsuario(1);
-
-        if (existe) {
-            System.out.println("O usuário existe no sistema.");
+        if (removido) {
+            System.out.println("Usuário removido com sucesso.");
         } else {
-            System.out.println("Usuário não encontrado.");
+            System.out.println("Usuário não encontrado para remoção.");
         }
+
+        System.out.println("\nAdicionando usuário com ID 3");
+        Usuario usuario3 = new Usuario(3, "Maria", "maria@gmail.com");
+        usuarioService.adicionarUsuario(usuario3);
+
+        System.out.println("\nLista Atualizada:\n");
+        usuarioService.listarUsuarios();
+
+        System.out.printf("\nTotal de usuários: %s", usuarioService.totalUsuarios());
     }
 }

@@ -48,4 +48,19 @@ public class UsuarioService {
         }
         return false;
     }
+
+    public boolean removerUsuario(int id) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).getId() == id) {
+                usuarios.remove(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public int totalUsuarios() {
+        return usuarios.size();
+    }
 }
