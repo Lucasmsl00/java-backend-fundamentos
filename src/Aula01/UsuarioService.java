@@ -22,9 +22,11 @@ public class UsuarioService {
             System.out.println("Nenhum usuário cadastrado.");
             return;
         }
-
+        
         for (Usuario usuario : usuarios) {
-            usuario.exibirDados();
+            System.out.printf("ID: %s", usuario.getId());
+            System.out.printf("\nNome: %s", usuario.getNome());
+            System.out.printf("\nEmail: %s", usuario.getEmail());
             System.out.println("\n------------------------");
         }
     }

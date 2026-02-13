@@ -34,11 +34,6 @@ public class Usuario {
         this.email = email;
     }
 
-    public void exibirDados() {
-        System.out.printf("ID: %s", id);
-        System.out.printf("\nNome: %s", nome);
-        System.out.printf("\nEmail: %s", email);
-
-    }
+    
 
 }
