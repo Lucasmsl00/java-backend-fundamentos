@@ -31,17 +31,6 @@ public class UsuarioService {
         }
     }
 
-    public Usuario buscaPorId(int id) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getId() == id) {
-                return usuario;
-            }
-        }
-
-        return null;
-    }
-
-
     public boolean existeUsuario(int id) {
         for (Usuario usuario : usuarios) {
             if (usuario.getId() == id) {
@@ -50,7 +39,7 @@ public class UsuarioService {
         }
         return false;
     }
-
+    
     public boolean removerUsuario(int id) {
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).getId() == id) {
@@ -58,33 +47,46 @@ public class UsuarioService {
                 return true;
             }
         }
-
+        
         return false;
     }
-
+    
     public int totalUsuarios() {
         return usuarios.size();
     }
-
+    
     public boolean atualizarEmail(int id, String novoEmail) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getId() == id) {
-                usuario.setEmail(novoEmail);
-                return true;
-            }
+
+        Usuario busca = buscaPorId(id);
+
+        if (busca == null) {
+            return false;
         }
 
-        return false;
+        busca.setEmail(novoEmail);
+        return true;
+        
+    }
+    
+    public boolean atualizarNome(int id, String novoNome) {
+        
+        Usuario busca = buscaPorId(id);
 
+        if (busca == null) {
+            return false;
+        }
+
+        busca.setNome(novoNome);
+        return true;
     }
 
-    public boolean atualizarNome(int id, String novoNome) {
+    public Usuario buscaPorId(int id) {
         for (Usuario usuario : usuarios) {
             if (usuario.getId() == id) {
-                usuario.setNome(novoNome);
-                return true;
+                return usuario;
             }
         }
-        return false;
+    
+        return null;
     }
 }
